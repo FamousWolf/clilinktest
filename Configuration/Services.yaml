@@ -1,0 +1,15 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+  Beechit\Clilinktest\:
+    resource: '../Classes/*'
+    exclude: '../Classes/Domain/Model/*'
+  Beechit\Clilinktest\Command\LinkTestCommand:
+    tags:
+      -
+        name: console.command
+        command: 'clilinktest:link-test'
+        description: 'Test absolute link'
+        schedulable: false
